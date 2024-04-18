@@ -5,7 +5,7 @@
 word
 prim_custom(int op, word a, word b, word c)
 {
-  int i;
+  uint i;
 
   switch (op) {
   case 100:
