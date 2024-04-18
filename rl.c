@@ -10,10 +10,8 @@ prim_custom(int op, word a, word b, word c)
   case 100: /* w h title → #t */
     InitWindow(immval(a), immval(b), (char*)c+W);
     return ITRUE;
-  case 101: { /* r g b → color */
-    uint32_t l = ((0xff<<24)|(cnum(c)<<16)|(cnum(b)<<8)|cnum(a));
-    return onum(l, 1);
-  }
+  case 101: /* r g b → color */
+      return onum(((0xff<<24)|(cnum(c)<<16)|(cnum(b)<<8)|cnum(a)), 1);
   case 102: { /* color → #t */
     uint32_t v = cnum(a);
     ClearBackground(*(Color*)&v);
