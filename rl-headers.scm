@@ -6,6 +6,10 @@
    (common))
 
   (export
+   draw
+   with-window
+
+   window-should-close?
    init-window
    make-color
    clear-background
@@ -41,4 +45,22 @@
 
     (define (set-target-fps n)
       (prim 107 n))
+
+    (define (window-should-close?)
+      (prim 108))
+
+    (define-syntax draw
+      (syntax-rules ()
+        ((draw exp1 ...)
+         (begin
+           (begin-drawing)
+           exp1 ...
+           (end-drawing)))))
+
+    (define-syntax with-window
+      (syntax-rules ()
+        ((with-window width height title ...)
+         (begin
+           (init-window width height title)
+           ...))))
     ))

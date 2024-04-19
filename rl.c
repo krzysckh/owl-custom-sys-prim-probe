@@ -33,6 +33,8 @@ prim_custom(int op, word a, word b, word c)
   case 107:
     SetTargetFPS(cnum(a));
     return ITRUE;
+  case 108:
+    return WindowShouldClose() ? ITRUE : IFALSE;
   default:
     return IFALSE;
   }
