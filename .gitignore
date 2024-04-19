@@ -9,4 +9,3 @@ rl-repl
 sqlite-main
 sqlite-main.c
 *.db
-common.scm
