@@ -3,3 +3,6 @@ main.c
 *.~undo-tree~
 rl-main
 rl-main.c
+rl-repl.c
+rl-repl
+\#*

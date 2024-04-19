@@ -9,3 +9,6 @@ clang -I$OWL_SOURCE_PATH/c -DPRIM_CUSTOM ext.c main.c -o main
 
 ol -x c -o rl-main.c rl.scm
 clang -ggdb -I$OWL_SOURCE_PATH/c -DPRIM_CUSTOM rl.c rl-main.c -lraylib -lm -o rl-main
+
+ol -x c -o rl-repl.c rl-repl.scm
+clang -ggdb -I$OWL_SOURCE_PATH/c -DPRIM_CUSTOM rl.c rl-repl.c -lraylib -lm -o rl-repl
