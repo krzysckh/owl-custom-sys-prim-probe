@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <fcntl.h>
 
 #include "ovm.h"
 
@@ -17,6 +18,12 @@ prim_custom(int op, word a, word b, word c)
     return ITRUE;
   case 102:
     return onum(2137, 0);
+  case 103:
+    return mkstring("Hiii :333");
+  case 104: {
+    int fd = open("ext.c", O_RDONLY);
+    return mkport(fd);
+  }
   default:
     return IFALSE;
   }

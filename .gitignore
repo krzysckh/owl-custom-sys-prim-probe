@@ -1,8 +1,12 @@
+\#*
+*.~undo-tree~
 main
 main.c
-*.~undo-tree~
 rl-main
 rl-main.c
 rl-repl.c
 rl-repl
-\#*
+sqlite-main
+sqlite-main.c
+*.db
+common.scm

@@ -2,10 +2,10 @@
     (rl-headers)
 
   (import
-   (owl toplevel))
+   (owl toplevel)
+   (common))
 
   (export
-   prim
    init-window
    make-color
    clear-background
@@ -16,15 +16,6 @@
    set-target-fps)
 
   (begin
-    (define (prim n . vs)
-      (let ((L (length vs)))
-        (cond
-         ((= L 0) (sys-prim n #f #f #f))
-         ((= L 1) (sys-prim n (car vs) #f #f))
-         ((= L 2) (sys-prim n (car vs) (cadr vs) #f))
-         (else
-          (sys-prim n (car vs) (cadr vs) (caddr vs))))))
-
     (define (init-window w h title)
       (when (and (number? w) (number? h) (string? title))
         (prim 100 w h title)))

@@ -18,3 +18,6 @@ clang $CFLAGS $LDFLAGS rl.c rl-main.c -lraylib -lm -o rl-main
 
 ol -x c -o rl-repl.c rl-repl.scm
 clang $CFLAGS $LDFLAGS rl.c rl-repl.c -lraylib -lm -o rl-repl
+
+ol -x c -o sqlite-main.c sqlite.scm
+clang $CFLAGS $LDFLAGS sqlite-main.c sqlite.c -lsqlite3 -o sqlite-main
