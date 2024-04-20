@@ -9,3 +9,6 @@ rl-repl
 sqlite-main
 sqlite-main.c
 *.db
+*.a
+*.exe
+ovm-win.c
