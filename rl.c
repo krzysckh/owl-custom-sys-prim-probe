@@ -35,6 +35,9 @@ prim_custom(int op, word a, word b, word c)
     return ITRUE;
   case 108:
     return WindowShouldClose() ? ITRUE : IFALSE;
+  case 109:
+    CloseWindow();
+    return ITRUE;
   default:
     return IFALSE;
   }

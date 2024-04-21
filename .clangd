@@ -1,2 +1,2 @@
 CompileFlags:
-  Add: [ -I/home/kpm/nmojeprogramy/owl/c, -Wall, -Wextra, -std=c89 ]
+  Add: [ -I/home/kpm/nmojeprogramy/owl/c, -I/usr/include/tcl8.6/, -Wall, -Wextra, -std=c89 ]

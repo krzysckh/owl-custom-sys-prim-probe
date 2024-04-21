@@ -22,7 +22,7 @@
   (begin
     (define (init-window w h title)
       (when (and (number? w) (number? h) (string? title))
-        (prim 100 w h title)))
+        (prim 100 w h (c-string title))))
 
     (define (make-color r g b)
       (prim 101 r g b))
@@ -49,6 +49,9 @@
     (define (window-should-close?)
       (prim 108))
 
+    (define (close-window)
+      (prim 109))
+
     (define-syntax draw
       (syntax-rules ()
         ((draw exp1 ...)
@@ -62,5 +65,6 @@
         ((with-window width height title ...)
          (begin
            (init-window width height title)
-           ...))))
+           ...
+           (close-window)))))
     ))

@@ -5,6 +5,7 @@
    (owl toplevel))
 
   (export
+   ->string
    prim)
 
   (begin
@@ -16,4 +17,8 @@
          ((= L 2) (sys-prim n (car vs) (cadr vs) #f))
          (else
           (sys-prim n (car vs) (cadr vs) (caddr vs))))))
+
+    (define (->string v)
+      (list->string (render v null)))
+
     ))
