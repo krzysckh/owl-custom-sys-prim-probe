@@ -1,10 +1,14 @@
 simple examples of using custom prim-ops in owl lisp
 
-  $ build.sh unix
+```console
+$ build.sh unix
+```
 
-it even works on the weird operating system for playing games!
+it even works on the weird operating system for playing games, and their foss brother!
 
-  https://pub.krzysckh.org/rl-main.exe
+* https://pub.krzysckh.org/rl-main.exe
+![](res/raylib-reactos.png)
+
 
 notes:
 
