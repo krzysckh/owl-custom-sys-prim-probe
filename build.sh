@@ -23,11 +23,6 @@ build_unix() {
 
   ol -x c -o sqlite-main.c sqlite.scm
   clang $CFLAGS $LDFLAGS sqlite-main.c sqlite.c -lsqlite3 -o sqlite-main
-
-  # ol -x c -o tk-main.c tk.scm
-  # clang $CFLAGS $LDFLAGS tk-main.c tk.c \
-  #   `pkg-config --cflags --libs tcl tk x11` -o tk-main
-
 }
 
 build_win() {

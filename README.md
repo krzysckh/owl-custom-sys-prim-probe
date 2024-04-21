@@ -12,6 +12,7 @@ it even works on the weird operating system for playing games, and their foss br
 
 notes:
 
+```
 Aki Helin @akihe · 1 hour ago (Owner)
 
 A few things that may be of use or are useful to know in this context:
@@ -29,3 +30,4 @@ A few things that may be of use or are useful to know in this context:
   return a value denoting the need and repeatedly e.g. (sleep 50) at
   lisp side until a result is available. This makes it possible for
   other threads to keep running.
+```
