@@ -25,5 +25,6 @@
   (print-wow (get-n))
   (print (hii))
   (map print (get-ext))
-  (print (+ 0.25 (rat)))
+  (print (rat))
+  (print (sys-prim 106 #f #f #f))
   0)

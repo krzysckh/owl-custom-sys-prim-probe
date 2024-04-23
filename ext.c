@@ -25,7 +25,9 @@ prim_custom(int op, word a, word b, word c)
     return mkport(fd);
   }
   case 105:
-    return mkfloat(0.25);
+    return mkfloat(0.25); /* 25/100 */
+  case 106:
+    return mkfloat((float)INT64_MAX+1.f); /* #f */
   default:
     return IFALSE;
   }
