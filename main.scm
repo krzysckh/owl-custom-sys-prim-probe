@@ -17,9 +17,13 @@
 (define (get-ext)
   (force-ll (lines (sys-prim 104 #f #f #f))))
 
+(define (rat)
+  (sys-prim 105 0.3 #f #f))
+
 (λ (_)
   (print-hello)
   (print-wow (get-n))
   (print (hii))
   (map print (get-ext))
+  (print (+ 0.25 (rat)))
   0)

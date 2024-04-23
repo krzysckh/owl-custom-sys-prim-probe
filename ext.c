@@ -24,6 +24,8 @@ prim_custom(int op, word a, word b, word c)
     int fd = open("ext.c", O_RDONLY);
     return mkport(fd);
   }
+  case 105:
+    return mkfloat(0.25);
   default:
     return IFALSE;
   }
