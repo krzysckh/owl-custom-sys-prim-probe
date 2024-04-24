@@ -4,6 +4,14 @@
 #include "ovm.h"
 
 word
+list_at(word l, int n)
+{
+  if (n == 0)
+    return G(l, 1);
+  return list_at(G(l, 2), n-1);
+}
+
+word
 prim_custom(int op, word a, word b, word c)
 {
   uint i;
@@ -31,6 +39,8 @@ prim_custom(int op, word a, word b, word c)
   case 107:
     return cons(mkfloat(0.00000000001),
                 mkfloat(0.000000000001)); /* (small float . #f) */
+  case 108: /* last */
+    return list_at(a, llen((word*)a)-1);
   default:
     return IFALSE;
   }

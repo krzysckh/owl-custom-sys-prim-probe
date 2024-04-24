@@ -28,4 +28,6 @@
   (print (rat))
   (print (sys-prim 106 #f #f #f))
   (print (sys-prim 107 #f #f #f))
+
+  (print (sys-prim 108 '(1 2 3 4) #f #f))
   0)
