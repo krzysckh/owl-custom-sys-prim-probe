@@ -4,6 +4,15 @@
 #include "ovm.h"
 
 word
+list_at(word l, int n)
+{
+  if (n == 0)
+    return G(l, 1);
+  return list_at(G(l, 2), n-1);
+}
+
+
+word
 prim_custom(int op, word a, word b, word c)
 {
   switch (op) {
@@ -38,6 +47,11 @@ prim_custom(int op, word a, word b, word c)
   case 109:
     CloseWindow();
     return ITRUE;
+  case 110: {
+    word x = list_at(b, 0), y = list_at(b, 1), h = list_at(b, 2);
+    uint32_t v = cnum(c);
+    DrawText(cstr(a), cnum(x), cnum(y), cnum(h), *(Color*)&v);
+  }
   default:
     return IFALSE;
   }

@@ -2,6 +2,7 @@ simple examples of using custom prim-ops in owl lisp
 
 ```console
 $ build.sh unix
+$ build.sh ol_rl_unix
 ```
 
 it even works on the weird operating system for playing games, and their foss brother!

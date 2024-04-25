@@ -11,9 +11,16 @@ if [ `uname -s` = "OpenBSD" ]; then
   LDFLAGS="$LDFLAGS -lglfw"
 fi
 
+
+build_ol_rl_unix() {
+  clang $CFLAGS makeol.c -o makeol
+  ./makeol $OWL_SOURCE_PATH/fasl/ol.fasl | cat - $OWL_SOURCE_PATH/c/ovm.c > ol.c
+  clang $CFLAGS $LDFLAGS ol.c rl.c -lraylib -lm -o ol-rl
+}
+
 build_unix() {
-  ol -x c -o main.c main.scm
-  clang $CFLAGS $LDFLAGS ext.c main.c -o main
+  # ol -x c -C $OWL_SOURCE_PATH/c/ovm.c -o main.c main.scm
+  # clang $CFLAGS $LDFLAGS ext.c main.c -o main
 
   ol -x c -o rl-main.c rl.scm
   clang $CFLAGS $LDFLAGS rl.c rl-main.c -lraylib -lm -o rl-main
@@ -21,8 +28,8 @@ build_unix() {
   ol -x c -o rl-repl.c rl-repl.scm
   clang $CFLAGS $LDFLAGS rl.c rl-repl.c -lraylib -lm -o rl-repl
 
-  ol -x c -o sqlite-main.c sqlite.scm
-  clang $CFLAGS $LDFLAGS sqlite-main.c sqlite.c -lsqlite3 -o sqlite-main
+  # ol -x c -o sqlite-main.c sqlite.scm
+  # clang $CFLAGS $LDFLAGS sqlite-main.c sqlite.c -lsqlite3 -o sqlite-main
 }
 
 build_win() {

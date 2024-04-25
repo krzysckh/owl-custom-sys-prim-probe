@@ -11,13 +11,16 @@
 
    window-should-close?
    init-window
+   close-window
    make-color
    clear-background
    begin-drawing
    end-drawing
    draw-circle
    key-down?
-   set-target-fps)
+   set-target-fps
+   draw-text
+   )
 
   (begin
     (define (init-window w h title)
@@ -52,6 +55,10 @@
     (define (close-window)
       (prim 109))
 
+    (define (draw-text text x y h color)
+      (prim 110 (c-string text) (list x y h) color))
+
+
     (define-syntax draw
       (syntax-rules ()
         ((draw exp1 ...)
@@ -62,9 +69,10 @@
 
     (define-syntax with-window
       (syntax-rules ()
-        ((with-window width height title ...)
+        ((with-window width height title exp1)
          (begin
            (init-window width height title)
-           ...
-           (close-window)))))
+           (let ((res exp1))
+             (close-window)
+             res)))))
     ))
